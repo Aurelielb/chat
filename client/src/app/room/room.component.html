@@ -1,0 +1,27 @@
+<form class="connection"
+      *ngIf="!nickName" #userForm="ngForm" (ngSubmit)="logUser($event)">
+  <label for="userName" class="form-label">Entrez votre nom pour rejoindre le chat: </label>
+  <input type="text" name="userName" id="userName" class="form-control" required
+        [(ngModel)]="inputUser">
+  <button class="btn" type="submit" [disabled]="!userForm.form.valid">Envoyer</button>
+</form>
+<div class="room flex-row" *ngIf="nickName">
+  <div class="talk">
+    <ul class="unstyled chat">
+      <li *ngFor="let message of messages">
+        <span *ngIf="message.nickname">{{message.nickname}}: </span>
+        {{message.message}}
+      </li>
+    </ul>
+    <form (ngSubmit)="sendMessage($event)" #chatForm="ngForm" class="talk-input flex-row">
+      <input type="text" name="message" class="form-control" required
+            [(ngModel)]="inputMessage" [value]="inputMessage">
+      <button class="btn" type="submit"  [disabled]="!chatForm.form.valid">Envoyer</button>
+    </form>
+  </div>
+  <ul class="unstyled users" *ngIf="users">
+    <li *ngFor="let user of users">
+      {{user}}
+    </li>
+  </ul>
+</div>

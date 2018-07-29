@@ -1,0 +1,64 @@
+.connection {
+    border: 1px solid #333;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin: 15vh auto 0;
+    padding: 10px;
+    width: 30%;
+}
+.connection .form-label,
+.connection .form-control {
+    margin-bottom: 10px;
+}
+
+.unstyled {
+    list-style: none;
+    padding: 0;
+}
+.unstyled li {
+    display: block;
+    padding: 2px;
+}
+.form-control {
+    border: 1px solid #333;
+    padding: 5px 10px;
+}
+.btn {
+    border: 1px solid #fb6812;
+    background: #fb6812;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.btn[disabled] {
+    color: #eee;
+    cursor: default;
+    opacity: 0.8;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.room {
+    flex-grow: 1;
+}
+.room .talk,
+.room .chat,
+.talk-input .form-control {
+    flex-grow: 1;
+}
+.room .users {
+    border-left: 1px solid #333; 
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding: 10px;
+    width: 15%;
+}
+.talk li {
+    border-bottom: 1px solid #eee;
+}
+.talk-input {
+    border-top: 1px solid #eee;
+}
