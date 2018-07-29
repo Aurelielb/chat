@@ -19,6 +19,8 @@ export class RoomComponent implements OnInit {
   users = [];
   socket: any;
 
+  usersOnMobile: false;
+
   constructor() { }
 
   ngOnInit() {
@@ -51,6 +53,7 @@ export class RoomComponent implements OnInit {
     this.socket.on('userlist', (data) => {
       this.users = Object.keys(data);
     });
+    // todo if text overflow, keep scroll on bottom
     this.socket.on('message', (data) => {
       this.messages.push(data);
     });

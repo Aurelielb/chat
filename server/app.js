@@ -39,6 +39,10 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('message', {
             message: `${currentUser} a quitté le chat`
         });
+        // try to alert client he has been disconnected
+        if (users[currentUser]) {
+            io.to(users[currentUser].id).emit('disconnect');
+        }
         delete (users[currentUser]);
         io.emit('userlist', users);
     });

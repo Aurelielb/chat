@@ -9,7 +9,7 @@
   <div class="talk">
     <ul class="unstyled chat">
       <li *ngFor="let message of messages">
-        <span *ngIf="message.nickname">{{message.nickname}}: </span>
+        <span *ngIf="message.nickname">[ {{message.nickname}} ] </span>
         {{message.message}}
       </li>
     </ul>
@@ -19,9 +19,11 @@
       <button class="btn" type="submit"  [disabled]="!chatForm.form.valid">Envoyer</button>
     </form>
   </div>
-  <ul class="unstyled users" *ngIf="users">
+  <ul class="unstyled users" [class.show]="usersOnMobile" *ngIf="users">
     <li *ngFor="let user of users">
       {{user}}
     </li>
+    <li class="mobile-tab"
+        (click)="usersOnMobile=!usersOnMobile">⮜</li>
   </ul>
 </div>
