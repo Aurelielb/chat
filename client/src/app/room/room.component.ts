@@ -18,7 +18,6 @@ export class RoomComponent implements OnInit {
   inputMessage: string;
   users = [];
   socket: any;
-
   usersOnMobile: false;
 
   constructor() { }

@@ -9,18 +9,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Launch socket package:
 
 ```bash
+$ npm install #first time
 $ cd server
 $ npm run start
 ```
 
-Then go back to repository's root:
+Then in a new terminal, go to repository's root:
 
 ```bash
+$ npm install #first time
 $ cd client
 $ ng serve
 ```
 
-Navigate to `http://localhost:4200/`. 
+Navigate to `http://localhost:4200/` in your browser. 
 
 > The app will automatically reload if you change any of the source files.
 
@@ -34,3 +36,10 @@ Launch socket package:
 $ cd server
 $ npm run start
 ```
+
+## todo : improvements
+
+* auto scroll to bottom when messages overflow
+* messages translations with i18n
+* add time to messages
+* smileys
